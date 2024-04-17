@@ -8,7 +8,8 @@ SoundFile gameMusic;
 PImage bckg1;
 PImage bckg2;
 PImage arc;
-PImage arr; 
+PImage bckg_start;
+
 Archer archer;
 Level level;
 Score score;
@@ -24,14 +25,20 @@ int score2;
 int score3;
 boolean  isYellow;
 float acceleration;
-//int redCounter = 0;
+boolean flag;
+
+boolean flag2;
+int xScreen = mouseX;
+int yScreen = mouseY;
+
 
 void setup() {
   size(800, 600);
-  bckg1 = loadImage("data/imgs/backgrounds/IMG-20240415-WA0023.jpg");
-  bckg2 = loadImage("data/imgs/backgrounds/IMGG-20240415-WA0025.jpg");
-  arc = loadImage("data/imgs/chars/IiiMG-20240415-WA0003-removebg-preview.png");
-  //arr = loadImage("imaaagesss (3).jpg");
+  bckg1 = loadImage("imgs/backgrounds/IMG-20240415-WA0023.jpg");
+  bckg2 = loadImage("imgs/backgrounds/IMGG-20240415-WA0025.jpg");
+  bckg_start = loadImage("imgs/backgrounds/Start_F_423366993_54HmmpY75qDk1XHHeib2TFLM8DvctHxp.jpg");
+
+  arc = loadImage("imgs/chars/arcccher_boy2-01.png");
 
   arwSound = new SoundFile(this,"sounds/arrow-impact-87260.mp3");
   popSound = new SoundFile(this,"sounds/balloon-pop-48030.mp3");
@@ -53,7 +60,7 @@ void draw() {
   s1 = "Score:"; 
   s2 =  "  | Level: ";
   s3 =  "      | Arrows: ";
-  s4 = "GG!";
+  s4 = "CONGRATS!!";
   //colors at level one
   if(level.levelNumber == 1) {
       image(bckg1,0,0);
@@ -161,10 +168,12 @@ void draw() {
 void resetLevel() {
   balloons.clear(); 
   Yballoons.clear();
-  if (level.levelNumber == 1) {
-     //starting  positions
-    float startX = width - 30; 
+  
+       //starting  positions
+      float startX = width - 30; 
   float startY = height - 40;
+  if (level.levelNumber == 1) {
+
     // Level 1:  15 red balloons aligned next to each other
     for (int i = 0; i < 15; i++) {
       balloons.add(new Balloon(startX - i * 30, startY, false, 0)); // fill balloons
@@ -173,7 +182,7 @@ void resetLevel() {
       // 3 yellow balloons and 15 red balloons with random positions
   else if (level.levelNumber == 2) { // level 2 starts
           for (int i = 0; i < 15; i++) { // for red
-     balloons.add(new Balloon (random(width-500, width-15) , random(height) , false , 0) ); 
+     balloons.add(new Balloon (startX - i * 30 , random(height) , false , 0) ); 
   }
     for(int j = 0; j < 3; j++) {   // for 3 yellow
          isYellow = j < 3;
@@ -189,16 +198,30 @@ void mouseMoved() {
 }
 
 void mousePressed() {
-  if (mouseButton == LEFT) {
-    //arwSound.play();
+ 
+ //if (mouseButton == LEFT /*&& xScreen < 540 && xScreen > 253 && yScreen < 375 && yScreen > 280*/)
+//  {
+  //bckg_start = bckg1;
+  //flag2 = true;
+//}
+  
+  if(mouseButton == RIGHT && quiver > 0)
+  {
+  arc = loadImage("imgs/chars/arrrcher_boy-01.png");
+  flag = true;
+    }
+    if (mouseButton == LEFT && flag) {
+  arc = loadImage("imgs/chars/arcccher_boy2-01.png");
     if (quiver > 0) {
       arrows.add(archer.shoot()); //return an arrow object
       arwSound.play();
       quiver--;
       score.remainingArrows = quiver;// display on the screen
+    flag = false;
     }
-  } 
+  }
   
+
   else if (mouseButton == RIGHT && quiver == 0 /*&& !balloons.isEmpty()*/ ) { // m7tag ashoof video el l3ba tany hna
   if(level.levelNumber == 1 && !balloons.isEmpty() )
   {
@@ -207,6 +230,7 @@ void mousePressed() {
     resetLevel();
   }
   
+
 else if(level.levelNumber == 2 && !balloons.isEmpty()) // check for just the red balloons
   {
         quiver = 20;

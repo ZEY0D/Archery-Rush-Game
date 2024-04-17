@@ -21,7 +21,9 @@ class Balloon {
           stroke(0);
       fill(170, 0, 0);}
     ellipse(x, y, 30, 40); // radius = 15 from x and 20 from y
-  }
+  line(x,y+13,x,y+16);
+    line(x+1,y+16,x+1,y+26);
+}
  
 // update
   void move() {
@@ -39,7 +41,7 @@ class Balloon {
     // arrow.x is the recent x posittion of the arrow 
     // arrow.y is the recent y position of arrow, which is always = mouseY
     
-    if(d < 15 || d < 20){ // 15 for x , 20 for y
+    if( d < 20){ 
       return true;} // if true then remove the balloon and increase the num of shooted balloons and ask if all balloons are shooted to move to the next level
     else {
     return false;} 

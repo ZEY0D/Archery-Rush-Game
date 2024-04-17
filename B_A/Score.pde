@@ -12,5 +12,3 @@ class Score {
     return (remainingArrows + 1) * shotBalloons;
   }
 }
-
-// reload , transfer messages 
