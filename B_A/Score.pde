@@ -1,4 +1,3 @@
-
 // Score Class
 class Score {
   int remainingArrows;
@@ -9,6 +8,7 @@ class Score {
     this.shotBalloons = shotBalloons;
   }  
   int calculateScore() {
+    // Score equation ordered by professor
     return (remainingArrows + 1) * shotBalloons;
   }
 }

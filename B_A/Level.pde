@@ -1,5 +1,3 @@
-
-
 // Level Class
 class Level {
   int levelNumber;
@@ -9,6 +7,6 @@ class Level {
   }
   
   boolean isLevelCompleted() {
-    return balloons.isEmpty();
+    return balloons.isEmpty(); // Red balloons only
   }                           
 }

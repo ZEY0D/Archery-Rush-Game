@@ -10,9 +10,9 @@ class Balloon {
     this.y = y;
     this.isYellow = isYellow;
     this.acceleration = acceleration;
-    speed = 1.6; // default
+    speed = 1.6; // default speed
   }
-
+  
   void display() {
     if (isYellow) {
     stroke(0);
@@ -25,7 +25,7 @@ class Balloon {
     line(x+1,y+16,x+1,y+26);
 }
  
-// update
+// update positions
   void move() {
     y -= speed; // Moving upwards
     speed += acceleration; 
@@ -35,14 +35,14 @@ class Balloon {
   }
 
   boolean hit(Arrow arrow) { 
+    // check crashing
     float d = dist(x, y, arrow.x, arrow.y); 
     // x is the center of every ballon from width = 0 , "window start" >> increases >>
     // y is the distance from the top of the window , and in case of moving up , y decreases
     // arrow.x is the recent x posittion of the arrow 
     // arrow.y is the recent y position of arrow, which is always = mouseY
-    
-    if( d < 20){ 
-      return true;} // if true then remove the balloon and increase the num of shooted balloons and ask if all balloons are shooted to move to the next level
+    if(d < 20){ 
+      return true;} // if true then remove the balloon and increase the num of shooted balloons
     else {
     return false;} 
       }
