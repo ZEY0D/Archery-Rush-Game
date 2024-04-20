@@ -8,10 +8,10 @@ Bow and Arrow game
 
 |Name|Code|
 | - | - |
-|ﻣﺻطﻔﻰ أﺷرف ﻣﺻطﻔﻰ ﻋﺑداﻟرﺣﯾم|9230875|
-|زﯾﺎد أﺷرف أﺣﻣد ﻣﺣﻣد|9230391|
-|ﻣﺣﻣد ﺣﻣدي ﻋﺑداﻟﺣﻣﯾد|9240038|
-|ﻋﻣرو ﻣﺣﻣود ﻋﺑداﻟﻔﺗﺎح|9230639|
+|Mostafa Ashraf Mostafa|9230875|
+|Zeyad Ashraf Ahmed Mohammed|9230391|
+|Mohammed Hamdey Abdelhamid|9240038|
+|Amr Mahmoud Abdelfattah|9230639|
 
 Abstract/introduction: The task was mainly about designing a game close to (bow & arrow 1992 game). The game’s target was about aiming at as much balloons as possible ro hit with the arrow. the design of the game required our team to have basic knowledge of Processing, OOP principles and java syntax. The process of developing and testing the code multiple times was fun and beneficial as it added a lot to our organizing skills.
 
@@ -65,7 +65,8 @@ Deeper look inside the game:
 
 5. End screen: Appears at the end of the game. The final score also appears at the left top of the screen.
 
-UML Diagram![](Aspose.Words.5774076e-2833-4077-8d52-8edd328e4801.007.jpeg)
+UML Diagram
+![](Aspose.Words.5774076e-2833-4077-8d52-8edd328e4801.007.jpeg)
 
 References
 
@@ -75,4 +76,4 @@ References
 - [Game Emulator](https://classicreload.com/win3x-bow-and-arrow.html)
 - [Bow and Arrow (Windows game 1992)](https://www.youtube.com/watch?v=cY6wWYDqF8Y)
 - [adobe stock](https://stock.adobe.com)
-8
+
