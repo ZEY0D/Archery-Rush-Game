@@ -5,8 +5,8 @@ class Level {
   Level(int levelNumber) {
     this.levelNumber = levelNumber;
   }
-  
+
   boolean isLevelCompleted() {
     return balloons.isEmpty(); // Red balloons only
-  }                           
+  }
 }
