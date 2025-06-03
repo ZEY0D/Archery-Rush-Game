@@ -49,7 +49,7 @@ Edit
 ### Run the Game
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/classy-arrow-game.git
+   git clone https://github.com/ZEY0D/Archery-Rush-Game.git
    cd classy-arrow-game
 Open in your favorite Java IDE.
 
